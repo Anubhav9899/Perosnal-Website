@@ -1,15 +1,21 @@
-/* Importing Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Moon+Dance&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto+Mono&family=Yeon+Sung&display=swap");
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* About Section Styling */
 .about {
   background-color: #222;
-  padding: 40px;
+  padding: 20px;
   border-radius: 8px;
   text-align: center;
   color: #fff;
-  max-width: 800px;
+  width: 100%; /* Ensure full width */
+  max-width: 100%; /* Remove any max-width constraints */
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 /* Heading with glitch effect */
@@ -17,43 +23,78 @@
   font-size: 3em;
   color: #fff;
   position: relative;
-  overflow: hidden;
   display: inline-block;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  overflow: hidden;
+  animation: glitchText 1s infinite ease-in-out;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
+    0 0 10px rgba(255, 255, 255, 0.4);
 }
 
+/* Glitch Effect Layers */
 .about h2::before,
 .about h2::after {
   content: "About Me";
   position: absolute;
   top: 0;
   left: 0;
-  color: #f39c12; /* Shadow color for glitch effect */
-  clip-path: inset(0 0 0 0);
-  animation: glitch 1.5s infinite linear alternate;
+  width: 100%;
+  height: 100%;
+  color: #ff3801;
+  overflow: hidden;
+  animation: glitchEffect 2s infinite ease-in-out alternate;
 }
 
-/* Glitch effect keyframes */
-@keyframes glitch {
+.about h2::before {
+  color: rgb(253, 94, 1);
+  animation-delay: 0.2s;
+  clip-path: inset(0 50% 10% 0);
+}
+
+.about h2::after {
+  color: blue;
+  animation-delay: 0.3s;
+  clip-path: inset(50% 0 0 50%);
+}
+
+/* Keyframes for the main glitch text animation */
+@keyframes glitchText {
   0% {
     clip-path: inset(0 0 0 0);
-    transform: translate(0);
   }
   25% {
-    clip-path: inset(0 0 0 50%);
-    transform: translate(-5px, -5px);
+    clip-path: inset(0 0 10% 0);
   }
   50% {
-    clip-path: inset(0 50% 0 0);
-    transform: translate(5px, 0);
+    clip-path: inset(50% 0 0 0);
   }
   75% {
-    clip-path: inset(0 0 0 25%);
-    transform: translate(-5px, 5px);
+    clip-path: inset(0 10% 0 0);
   }
   100% {
     clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Keyframes for the glitch effect movement */
+@keyframes glitchEffect {
+  0% {
+    transform: translate(2px, -2px);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(3px, 1px);
+  }
+  60% {
+    transform: translate(-1px, -3px);
+  }
+  80% {
+    transform: translate(1px, 2px);
+  }
+  100% {
     transform: translate(0);
   }
 }
@@ -101,9 +142,10 @@
   font-size: 1.2em;
   margin-top: 10px;
   line-height: 1.6;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%; /* Set width to full */
+  max-width: none; /* Remove max-width constraint */
+  margin: 0; /* Remove centering margin */
+  text-align: left; /* Align text to the left */
 }
 
 /* Download Resume Button */

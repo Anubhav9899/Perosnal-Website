@@ -13,15 +13,14 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: rgba(0, 255, 255, 0.8); /* Cyan glow */
+  background-color: rgba(0, 255, 255, 1); /* Solid color for no blur */
   pointer-events: none;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6),
-    0 0 30px rgba(0, 255, 255, 0.4);
-  z-index: 9999; /* Ensures it stays on top without affecting layout */
+  box-shadow: 0 0 4px rgba(0, 255, 255, 1), 0 0 8px rgba(0, 255, 255, 0.8); /* Reduced shadow layers */
+  z-index: 9999;
 }
 
-/* Trail element styling */
+/* Enhanced Trail styling */
 .trail {
   position: fixed;
   width: 15px;
@@ -31,7 +30,19 @@
   pointer-events: none;
   transform: translate(-50%, -50%);
   opacity: 1;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: trailFade 0.8s ease forwards;
   box-shadow: 0 0 8px rgba(0, 255, 255, 0.6), 0 0 15px rgba(0, 255, 255, 0.4);
   z-index: 9999; /* Ensures trails stay on top without affecting layout */
+}
+
+/* Trail animation for fading and spreading */
+@keyframes trailFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2); /* Spreads out */
+  }
 }

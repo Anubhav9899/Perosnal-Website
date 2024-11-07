@@ -48,6 +48,8 @@ function Skills() {
     "HTML",
     "Git",
     "MERN Stack",
+    "DSA",
+    "Docker",
   ];
 
   return (

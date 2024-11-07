@@ -1,6 +1,7 @@
 /* Header Styling */
 .header {
   width: 100%;
+  max-width: 100vw;
   padding: 20px;
   text-align: center;
   background-color: #000; /* Optional: Set background color */
@@ -8,6 +9,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 
 /* Header Text Styling */

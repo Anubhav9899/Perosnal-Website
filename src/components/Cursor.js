@@ -32,7 +32,7 @@ function Cursor() {
           if (trail.parentElement) {
             trail.remove();
           }
-        }, 500); // Remove after fade-out
+        }, 800); // Remove after fade-out
       }, 10);
     };
 

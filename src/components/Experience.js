@@ -5,16 +5,16 @@ import resume from "../resume/Anubhav_Resume_2.pdf"; // Correct relative path to
 function Experience() {
   const experiences = [
     {
-      role: "Frontend Developer",
-      company: "ABC Corp",
+      role: "Web Development Intern",
+      company: "Nullclass",
       description:
-        "Developed and maintained user interfaces with React and CSS.",
+        "Proposed and maintained responsive web applications using HTML, CSS, and JavaScript, achieving a 90% reduction in load times across multiple pages. Optimized front-end performance with asynchronous JavaScript and minification, enhancing user engagement and compatibility across devices. Collaborated on RESTful API implementation with Node.js and Express, boosting data exchange efficiency by 99% to improve application performance.",
     },
     {
-      role: "Software Engineer",
-      company: "XYZ Ltd",
+      role: "Machine Learning Intern",
+      company: "Encryptix",
       description:
-        "Worked on full-stack development projects using the MERN stack.",
+        "Fine-tuned machine learning models using TensorFlow and Scikit-learn, achieving a 90% accuracy improvement across multiple projects. Conducted data preprocessing and feature engineering on large datasets to optimize model training and evaluation. Leveraged hyperparameter tuning and evaluation metrics, enhancing algorithm performance by 10% and demonstrating proficiency in deploying efficient, high-accuracy models.",
     },
   ];
 

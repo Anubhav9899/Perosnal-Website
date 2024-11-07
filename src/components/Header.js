@@ -21,7 +21,7 @@ function Header() {
 
   return (
     <header className="header">
-      <h1>Anubhav Singh</h1>
+      <h1>hi,i am Anubhav Singh</h1>
     </header>
   );
 }
